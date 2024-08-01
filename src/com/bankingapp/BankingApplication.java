@@ -18,4 +18,21 @@ class BankAccount{
             prevTransaction = amount;
         }
     }
+    void withdraw(int amount){
+        if(amount!=0){
+            balance = balance - amount;
+            prevTransaction = - amount;
+        }
+    }
+    void getPreviousTransaction(){
+        if(prevTransaction>0){
+            System.out.println("Deposited : "+prevTransaction);
+        }
+        else if(prevTransaction<0){
+            System.out.println("Withdrawn : "+Math.abs(prevTransaction));
+        }
+        else{
+            System.out.println("No transaction occurred ");
+        }
+    }
 }
